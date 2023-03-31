@@ -1,0 +1,25 @@
+server:
+   port: 8085
+     
+spring:
+  application:
+    name: AUTH-SERVICE
+  datasource:
+    url: jdbc:postgresql://localhost:5432/microservice
+    username: postgres
+    password: RECOMMENDED
+  jpa:
+     hibernate:
+       naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+       ddl-auto: update
+     show-sql: true 
+     
+eureka:
+ instance:
+   prefer-ip-address: true
+ client:
+   fetch-registry: true
+   register-with-eureka: true
+   service-url:
+     defaultZone: http://localhost:8761/eureka
